@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvd4jmsshy4bu"]
+
+[ext_resource type="PackedScene" uid="uid://c8axi8t80sfkt" path="res://Scenes/Wall.tscn" id="1_a0qjo"]
+[ext_resource type="PackedScene" uid="uid://da7yd4k5yl1jk" path="res://Scenes/Paddles/paddle.tscn" id="2_nik5t"]
+[ext_resource type="Script" path="res://Scenes/Paddles/enemy_paddle.gd" id="3_l6vsq"]
+[ext_resource type="PackedScene" uid="uid://cuwtjlmlgtcjq" path="res://Scenes/ball.tscn" id="4_ejf05"]
+
+[node name="main" type="Node2D"]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Top_wall" parent="Walls" instance=ExtResource("1_a0qjo")]
+position = Vector2(10, -600)
+rotation = 1.5708
+scale = Vector2(1, 9)
+
+[node name="Bottom_wall" parent="Walls" instance=ExtResource("1_a0qjo")]
+position = Vector2(10, 600)
+rotation = 1.5708
+scale = Vector2(1, 9)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
+
+[node name="Paddle" parent="." instance=ExtResource("2_nik5t")]
+position = Vector2(-1000, 0)
+
+[node name="Enemy_paddle" parent="." instance=ExtResource("2_nik5t")]
+position = Vector2(1000, 0)
+script = ExtResource("3_l6vsq")
+
+[node name="Ball" parent="." instance=ExtResource("4_ejf05")]
