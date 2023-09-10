@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvd4jmsshy4bu"]
+[gd_scene load_steps=6 format=3 uid="uid://bvd4jmsshy4bu"]
 
 [ext_resource type="PackedScene" uid="uid://c8axi8t80sfkt" path="res://Scenes/Wall.tscn" id="1_a0qjo"]
 [ext_resource type="PackedScene" uid="uid://da7yd4k5yl1jk" path="res://Scenes/Paddles/paddle.tscn" id="2_nik5t"]
 [ext_resource type="Script" path="res://Scenes/Paddles/enemy_paddle.gd" id="3_l6vsq"]
 [ext_resource type="PackedScene" uid="uid://cuwtjlmlgtcjq" path="res://Scenes/ball.tscn" id="4_ejf05"]
+[ext_resource type="PackedScene" uid="uid://dypf18ykvpffb" path="res://Scenes/edge.tscn" id="5_amr7d"]
 
 [node name="main" type="Node2D"]
 
@@ -32,3 +33,9 @@ paddle_speed = 40000
 ball = NodePath("../Ball")
 
 [node name="Ball" parent="." instance=ExtResource("4_ejf05")]
+
+[node name="LeftEdge" parent="." instance=ExtResource("5_amr7d")]
+position = Vector2(-1012, 23)
+
+[node name="RightEdge" parent="." instance=ExtResource("5_amr7d")]
+position = Vector2(1007, 20)
