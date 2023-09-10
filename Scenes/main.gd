@@ -6,15 +6,18 @@ var enemy_points = 0
 @onready var enemy_paddle = $Enemy_paddle
 @onready var player_paddle = $Paddle
 @onready var ball = $Ball as Ball
+@onready var ui = $UI as UI
 
 func _on_enemy_scored():
 	enemy_points += 1
+	ui.update_enemy_points(enemy_points)
 	reset_game_state()
 #	print_debug(enemy_points)
 
 
 func _on_player_scored():
 	player_points += 1
+	ui.update_player_points(player_points)
 	reset_game_state()
 #	print_debug(player_points)
 	

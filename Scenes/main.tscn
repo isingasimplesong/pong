@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvd4jmsshy4bu"]
+[gd_scene load_steps=9 format=3 uid="uid://bvd4jmsshy4bu"]
 
 [ext_resource type="PackedScene" uid="uid://c8axi8t80sfkt" path="res://Scenes/Wall.tscn" id="1_a0qjo"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_cnxgu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cuwtjlmlgtcjq" path="res://Scenes/ball.tscn" id="4_ejf05"]
 [ext_resource type="PackedScene" uid="uid://dypf18ykvpffb" path="res://Scenes/edge.tscn" id="5_amr7d"]
 [ext_resource type="Texture2D" uid="uid://uged5e8m1mlj" path="res://Assets/pingPongDottedLine.png" id="7_sltxl"]
+[ext_resource type="PackedScene" uid="uid://c45mcp8r7m1d6" path="res://Scenes/UI.tscn" id="8_6wg7q"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_cnxgu")
@@ -38,10 +39,10 @@ ball = NodePath("../Ball")
 [node name="Ball" parent="." instance=ExtResource("4_ejf05")]
 
 [node name="LeftEdge" parent="." instance=ExtResource("5_amr7d")]
-position = Vector2(-1118, 23)
+position = Vector2(-1003, 24)
 
 [node name="RightEdge" parent="." instance=ExtResource("5_amr7d")]
-position = Vector2(1143, -10)
+position = Vector2(1006, -6)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
@@ -50,6 +51,8 @@ points = PackedVector2Array(0, 0, 0, 1200)
 width = 32.0
 texture = ExtResource("7_sltxl")
 texture_mode = 1
+
+[node name="UI" parent="." instance=ExtResource("8_6wg7q")]
 
 [connection signal="point_scored" from="LeftEdge" to="." method="_on_enemy_scored"]
 [connection signal="point_scored" from="RightEdge" to="." method="_on_player_scored"]
