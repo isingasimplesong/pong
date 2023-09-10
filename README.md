@@ -1,2 +1,2 @@
 # pong
-Pong clone with godot
+Pong clone to learn godot
