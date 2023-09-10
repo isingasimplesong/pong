@@ -25,8 +25,10 @@ zoom = Vector2(0.4, 0.4)
 [node name="Paddle" parent="." instance=ExtResource("2_nik5t")]
 position = Vector2(-1000, 0)
 
-[node name="Enemy_paddle" parent="." instance=ExtResource("2_nik5t")]
+[node name="Enemy_paddle" parent="." node_paths=PackedStringArray("ball") instance=ExtResource("2_nik5t")]
 position = Vector2(1000, 0)
 script = ExtResource("3_l6vsq")
+paddle_speed = 50000
+ball = NodePath("../Ball")
 
 [node name="Ball" parent="." instance=ExtResource("4_ejf05")]
