@@ -39,10 +39,10 @@ ball = NodePath("../Ball")
 [node name="Ball" parent="." instance=ExtResource("4_ejf05")]
 
 [node name="LeftEdge" parent="." instance=ExtResource("5_amr7d")]
-position = Vector2(-1003, 24)
+position = Vector2(-1018, 4)
 
 [node name="RightEdge" parent="." instance=ExtResource("5_amr7d")]
-position = Vector2(1006, -6)
+position = Vector2(1026, -24)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
